@@ -434,6 +434,66 @@ body {
   text-decoration: underline;
 }
 
+/* Project modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  width: min(700px, 100%);
+  background: #0f172a;
+  border: 1px solid rgba(226, 232, 240, 0.15);
+  border-radius: 18px;
+  padding: 24px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.modal-content h3 {
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+}
+
+.modal-content p {
+  color: #cbd5e1;
+  margin-bottom: 14px;
+}
+
+.modal-content ul {
+  padding-left: 20px;
+}
+
+.modal-content li {
+  margin-bottom: 8px;
+  color: #e2e8f0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: #e2e8f0;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  opacity: 0.8;
+}
+
 /* Contact form */
 .contact-form {
   max-width: 600px;
@@ -559,5 +619,14 @@ body.light-theme .theme-toggle:hover {
   background: #e2e8f0;
 }
 
+body.light-theme .modal-content {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
 
+body.light-theme .modal-content p,
+body.light-theme .modal-content li,
+body.light-theme .modal-close {
+  color: #0f172a;
+}
 
