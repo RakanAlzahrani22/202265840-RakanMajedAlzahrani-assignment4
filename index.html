@@ -15,10 +15,11 @@
       <a class="logo" href="#">Rakan</a>
 
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#github">GitHub</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
       <button id="themeToggle" class="theme-toggle" type="button">
         Toggle Theme
       </button>
@@ -34,8 +35,8 @@
           <h1 class="title">Hi, I’m Rakan 👋</h1>
 
           <p class="intro">
-            I’m a computer science student interested in building clean and simple websites.
-            Right now I’m learning HTML, CSS, and JavaScript, and this portfolio is part of my Assignment 1.
+          I’m a computer science student interested in building clean, user-friendly web applications.
+          This portfolio showcases my coursework projects and the interactive features I developed using HTML, CSS, and JavaScript.
           </p>
               <div class="visitor-box">
                 <label for="visitorName">Personalize this page</label>
@@ -67,9 +68,9 @@
 
     <section id="projects" class="section container">
   <h2 class="section-title">Projects</h2>
-  <p class="section-subtitle">
-    These are two JavaFX projects I worked on during my studies.
-  </p>
+    <p class="section-subtitle">
+    These featured academic projects highlight my experience with Java, JavaFX, database integration, and application design.
+    </p>
 
   <div class="projects-controls">
   <label for="projectSearch">Search projects</label>
@@ -133,6 +134,13 @@
           <span>JavaFX</span>
           <span>OOP</span>
         </div>
+        <button
+        class="btn outline details-btn"
+          type="button"
+         data-project="facelite"
+          >
+           View Details
+        </button>
       </div>
     </article>
 
@@ -168,6 +176,13 @@
           <span>MySQL</span>
           <span>MVC</span>
         </div>
+        <button
+  class="btn outline details-btn"
+  type="button"
+  data-project="resource"
+>
+  View Details
+</button>
       </div>
     </article>
 
@@ -181,7 +196,7 @@
 <section id="github" class="section container">
   <h2 class="section-title">GitHub Repositories</h2>
   <p class="section-subtitle">
-    This section loads my latest public repositories from GitHub.
+    This section displays selected public repositories from my GitHub profile to show my latest development work.
   </p>
 
   <div class="github-controls">
@@ -232,7 +247,17 @@
 
   </form>
 </section>
+<div id="projectModal" class="modal hidden">
+  <div class="modal-content">
+    <button id="closeModalBtn" class="modal-close" type="button" aria-label="Close modal">
+      ×
+    </button>
 
+    <h3 id="modalTitle">Project Title</h3>
+    <p id="modalDescription">Project description will appear here.</p>
+    <ul id="modalList"></ul>
+  </div>
+</div>
   </main>
 
   <footer class="footer">
