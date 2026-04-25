@@ -1,41 +1,63 @@
-# Assignment 3 – Advanced Portfolio Website
+# Assignment 4 – Personal Web Application
 
-This project is my Assignment 3 submission for SWE 363. It builds on my previous portfolio website from Assignments 1 and 2 by adding advanced functionality, external API integration, stronger state management, and more complex JavaScript logic.
+This project is my final submission for SWE 363. It brings together the work completed in Assignments 1, 2, and 3 into a polished personal web application that demonstrates responsive design, JavaScript interactivity, API integration, state management, and professional presentation.
 
-## Project Description
+## Project Overview
 
-The website is a personal portfolio that introduces me, shows my academic projects, and allows visitors to interact with the page through multiple dynamic features.
+This website is a personal portfolio web application that introduces me, showcases my academic projects, and demonstrates the front-end development skills I built throughout the course.
 
-This version includes:
-- GitHub API integration to display public repositories
-- project search, filter, and sort controls
-- theme toggle with saved preference
-- visitor name personalization with localStorage
-- validated contact form with user feedback
+The application includes:
+- a responsive personal portfolio layout
+- interactive project search, filter, and sort
+- GitHub API integration for displaying public repositories
+- theme persistence using `localStorage`
+- visitor name personalization using `localStorage`
+- contact form validation with user feedback
+- a project details modal for a more polished experience
 
-## Features
+## Main Features
 
-### 1. GitHub API Integration
-- Loads my latest public GitHub repositories
-- Displays repository name, description, language, and link
-- Shows loading and error feedback
+### 1. Interactive Portfolio Sections
+- About section with personal introduction
+- Projects section with featured academic work
+- GitHub section with live repository data
+- Contact section with validation and feedback
 
 ### 2. Project Search, Filter, and Sort
-- Search projects by keyword
-- Filter projects by category
-- Sort projects alphabetically
-- Shows an empty-state message when no projects match
+Users can:
+- search projects by keyword
+- filter projects by category
+- sort projects alphabetically
+- view an empty-state message when nothing matches
 
-### 3. State Management
-- Theme preference is saved using `localStorage`
-- Visitor name is saved using `localStorage`
-- Greeting updates dynamically based on saved name
+### 3. GitHub API Integration
+The website fetches public repositories from GitHub and displays:
+- repository name
+- description
+- main language
+- link to the repository
 
-### 4. Form Validation
-- Validates empty fields
-- Checks email format
-- Ensures the message is long enough
-- Displays inline error messages and success feedback
+The interface also provides:
+- loading feedback
+- error feedback if the API request fails
+
+### 4. State Management
+The application remembers:
+- the selected light or dark theme
+- the visitor’s saved name
+
+This is handled using `localStorage`.
+
+### 5. Contact Form Validation
+The contact form:
+- checks for empty fields
+- validates email format
+- enforces a minimum message length
+- displays inline error messages
+- shows a success message after valid submission
+
+### 6. Final Innovation Feature
+A project details modal was added so visitors can open a focused view of project information without leaving the page. This improves the user experience and makes the application feel more professional.
 
 ## Technologies Used
 
@@ -49,7 +71,7 @@ This version includes:
 ## Project Structure
 
 ```text
-id-name-assignment3/
+id-name-assignment4/
 ├── README.md
 ├── index.html
 ├── css/
@@ -61,4 +83,7 @@ id-name-assignment3/
 ├── docs/
 │   ├── ai-usage-report.md
 │   └── technical-documentation.md
+├── presentation/
+│   ├── slides.pdf
+│   └── demo-video.mp4
 └── .gitignore
