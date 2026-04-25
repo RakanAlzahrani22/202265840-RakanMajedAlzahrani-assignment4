@@ -63,7 +63,7 @@ if (clearNameBtn && visitorGreeting) {
 
 
 
-// GitHub repositories loader
+
 // GitHub repositories loader
 const loadReposBtn = document.getElementById("loadReposBtn");
 const githubStatus = document.getElementById("githubStatus");
@@ -189,7 +189,89 @@ if (projectSearch && projectFilter && projectSort && projectsGrid) {
 
   updateProjects();
 }
+// Project details modal
+const modal = document.getElementById("projectModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const modalList = document.getElementById("modalList");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const detailsButtons = document.querySelectorAll(".details-btn");
 
+const projectDetails = {
+  facelite: {
+    title: "FaceLite Application",
+    description:
+      "A JavaFX desktop application for managing user profiles and friend relationships.",
+    points: [
+      "Built using Java and JavaFX.",
+      "Supports adding, deleting, and searching for profiles.",
+      "Allows status updates and profile picture changes.",
+      "Includes friend management with add and remove actions."
+    ]
+  },
+  resource: {
+    title: "Resource Reserving System",
+    description:
+      "A JavaFX reservation system with authentication and database integration.",
+    points: [
+      "Built using Java, JavaFX, and MySQL.",
+      "Includes login and signup functionality.",
+      "Uses database connectivity for reservation data.",
+      "Provides a main navigation panel after successful login."
+    ]
+  }
+};
+
+function openModal(projectKey) {
+  const project = projectDetails[projectKey];
+
+  if (!project || !modal || !modalTitle || !modalDescription || !modalList) {
+    return;
+  }
+
+  modalTitle.textContent = project.title;
+  modalDescription.textContent = project.description;
+  modalList.innerHTML = "";
+
+  project.points.forEach(function (point) {
+    const li = document.createElement("li");
+    li.textContent = point;
+    modalList.appendChild(li);
+  });
+
+  modal.classList.remove("hidden");
+}
+
+function closeModal() {
+  if (modal) {
+    modal.classList.add("hidden");
+  }
+}
+
+detailsButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const projectKey = button.dataset.project;
+    openModal(projectKey);
+  });
+});
+
+if (closeModalBtn) {
+  closeModalBtn.addEventListener("click", closeModal);
+}
+
+if (modal) {
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+}
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
 // Contact form validation
 const form = document.querySelector(".contact-form");
 
