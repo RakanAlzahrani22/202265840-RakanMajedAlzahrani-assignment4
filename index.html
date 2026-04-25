@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rakan Alzahrani | Portfolio</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Simple navbar (helps for smooth scrolling later) -->
+  <header class="header">
+    <nav class="nav container">
+      <a class="logo" href="#">Rakan</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="themeToggle" class="theme-toggle" type="button">
+        Toggle Theme
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- SECTION 1: ABOUT ME -->
+    <section id="about" class="section container">
+      <div class="about">
+        <div class="about-text">
+          <p class="tagline">Aspiring Web Developer • CS Student</p>
+          <h1 class="title">Hi, I’m Rakan 👋</h1>
+
+          <p class="intro">
+            I’m a computer science student interested in building clean and simple websites.
+            Right now I’m learning HTML, CSS, and JavaScript, and this portfolio is part of my Assignment 1.
+          </p>
+              <div class="visitor-box">
+                <label for="visitorName">Personalize this page</label>
+                <input
+                  type="text"
+                  id="visitorName"
+                  placeholder="Enter your name"
+                />
+                <div class="visitor-actions">
+                  <button id="saveNameBtn" class="btn primary" type="button">Save Name</button>
+                  <button id="clearNameBtn" class="btn outline" type="button">Clear</button>
+                </div>
+                <p id="visitorGreeting" class="visitor-greeting">
+                  Enter your name to personalize the greeting.
+                </p>
+              </div>
+          <div class="about-buttons">
+            <a class="btn primary" href="#projects">See my projects</a>
+            <a class="btn outline" href="#contact">Contact me</a>
+          </div>
+        </div>
+
+        <div class="about-image">
+          <!-- Replace this later with your own image in assets/images -->
+          <img src="assets/images/profileimage.png" alt="Profile placeholder image" />
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section container">
+  <h2 class="section-title">Projects</h2>
+  <p class="section-subtitle">
+    These are two JavaFX projects I worked on during my studies.
+  </p>
+
+  <div class="projects-controls">
+  <label for="projectSearch">Search projects</label>
+  <input
+    type="text"
+    id="projectSearch"
+    placeholder="Search by title or technology"
+  />
+
+  <label for="projectFilter">Filter by category</label>
+  <select id="projectFilter">
+    <option value="all">All</option>
+    <option value="java">Java</option>
+    <option value="javafx">JavaFX</option>
+    <option value="database">Database</option>
+  </select>
+
+  <label for="projectSort">Sort projects</label>
+  <select id="projectSort">
+    <option value="default">Default</option>
+    <option value="az">A–Z</option>
+    <option value="za">Z–A</option>
+  </select>
+
+  <p class="controls-help">
+    Use search, filter, and sort together to explore my projects.
+  </p>
+
+  <p id="searchStatus" class="search-status"></p>
+</div>
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <article
+  class="project-card"
+  data-search="facelite java javafx oop profile management friends"
+  data-category="java javafx"
+  data-title="FaceLite Application"
+>
+      <img
+        class="project-img"
+        src="assets/images/profileimage.png" alt="Profile placeholder image"
+      />
+
+      <div class="project-content">
+        <h3>FaceLite Application</h3>
+        <p>
+          A JavaFX app for managing user profiles. Users can add/delete profiles,
+          update status, change profile pictures, and manage friends (add/delete).
+        </p>
+
+        <ul class="project-points">
+          <li>Profile management (add, delete, lookup)</li>
+          <li>Status + profile picture updates</li>
+          <li>Friends system (add & remove)</li>
+        </ul>
+
+        <div class="project-tags">
+          <span>Java</span>
+          <span>JavaFX</span>
+          <span>OOP</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article
+  class="project-card"
+  data-search="resource reserving system java javafx mysql mvc reservation login signup database"
+  data-category="java javafx database"
+  data-title="Resource Reserving System"
+>
+      <img
+        class="project-img"
+        src="assets/images/ResourceReservingSystem.png"
+        alt="Resource Reserving System JavaFX screenshot"
+      />
+
+      <div class="project-content">
+        <h3>Resource Reserving System</h3>
+        <p>
+          A JavaFX reservation system with login/signup and database integration.
+          It allows managing facility reservations and includes authentication features.
+        </p>
+
+        <ul class="project-points">
+          <li>Login + signup system</li>
+          <li>Database connection using MySQL</li>
+          <li>Main panel navigation after login</li>
+        </ul>
+
+        <div class="project-tags">
+          <span>Java</span>
+          <span>JavaFX</span>
+          <span>MySQL</span>
+          <span>MVC</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+<p id="emptyState" class="empty-state" style="display: none;">
+  No projects found. Try another search term.
+</p>
+</section>
+
+<section id="github" class="section container">
+  <h2 class="section-title">GitHub Repositories</h2>
+  <p class="section-subtitle">
+    This section loads my latest public repositories from GitHub.
+  </p>
+
+  <div class="github-controls">
+    <button id="loadReposBtn" class="btn primary" type="button">
+      Load GitHub Repositories
+    </button>
+  </div>
+
+  <p id="githubStatus" class="github-status">
+  My latest public repositories will appear here. You can also reload them using the button above.
+</p>
+
+
+  <div id="githubRepos" class="github-grid"></div>
+</section>
+
+
+    <section id="contact" class="section container">
+  <h2 class="section-title">Contact</h2>
+  <p class="section-subtitle">
+    Feel free to reach out if you'd like to connect or ask about my projects.
+  </p>
+
+  <form class="contact-form" novalidate>
+    
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your name" required>
+      <small id="nameError" class="error-message"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your email" required>
+      <small id="emailError" class="error-message"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+      <small id="messageError" class="error-message"></small>
+    </div>
+
+    <button type="submit" class="btn primary">Send Message</button>
+    <p id="formSuccess" class="success-message" style="display: none;">
+      Thank you! Your message has been sent successfully.
+    </p>
+
+  </form>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Rakan Alzahrani</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
